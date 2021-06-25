@@ -14,3 +14,5 @@ RUN dnf --disableplugin=subscription-manager install -y jq file
 
 ENV PORT 8080
 EXPOSE 8080
+
+CMD ['bin/bash','-c']
