@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: scan-docker-
+spec:
+  serviceAccountName: dockerhub-service
+  taskRef:
+    name: twistlock-scan 
+  resources:
+    outputs:
+      - name: Twistlock-Image
+        resourceRef:
+          name: twistlock-image
