@@ -1,4 +1,4 @@
-piVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: build-task
@@ -37,7 +37,7 @@ spec:
         - set -e -o pipefail;
           echo "Cloning $REPOSITORY";
           cd /workspace && git clone -q -b $REVISION $REPOSITORY .;
- - name: build-docker-image
+   - name: build-docker-image
       image: ibmcom/pipeline-base-image
       env:
         - name: IBMCLOUD_API_KEY
