@@ -1,0 +1,63 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: hello-world-git
+  
+spec:
+  type: git
+  params:
+    - name: revision
+      value: master
+    - name: url
+      value: https://github.com/open-toolchain/hello-containers
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: hello-tekton-git
+  
+spec:
+  type: git
+  params:
+    - name: revision
+      value: main
+    - name: url
+      value: https://github.com/Shraddha8269/tekton-twistlock
+      
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: hello-world-tekton-demo-image
+  
+spec:
+  type: image
+  params:
+    - name: url
+      value: shradhajain123/hello-world-tekton-demo
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: twistlock-image
+  
+spec:
+  type: image
+  params:
+    - name: url
+      value:  us.icr.io/wmldeveloperregistry/tt-base:0.0.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
